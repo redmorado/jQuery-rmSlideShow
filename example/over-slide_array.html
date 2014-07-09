@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>example</title>
+	<link rel="stylesheet" href="basic.css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.rmslideshow.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.rmSlideShow').rmslideshow({
+				width: 930,
+				height: 300,
+				animation_type: 'over-slide',
+				data_type: 'array',
+				data_source: [{
+					src: 'images/1.png',
+					url: 'http://example.com/',
+					target: '_blank'
+				}, {
+					src: 'images/2.png'
+				}, {
+					src: 'images/3.png',
+					url: 'http://google.com/'
+				}],
+				navigator: {
+					prev: '.rmSlideShow-navigator-prev a',
+					next: '.rmSlideShow-navigator-next a'
+				}
+			});
+		});
+	</script>
+	<style type="text/css">
+		.rmSlideShow{
+			overflow: hidden;
+			position: relative;
+			width: 930px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="rmSlideShow"></div>
+<div class="rmSlideShow-navigator-prev"><a href="#">prev</a></div>
+<div class="rmSlideShow-navigator-next"><a href="#">next</a></div>
+
+</body>
+</html>

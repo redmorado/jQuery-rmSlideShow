@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+
+/*-----reset-----*/
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, dl, dt, dd,
+table, tr, th, td, address, form,
+blockquote, pre, code{
+	margin:0;
+	padding:0;
+	border:none;
+	list-style:none;
+	font-size:100%;
+}
+
+ 
+/*--------------------基本設定---------------------*/
+body{
+	font-family:"Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+	font-size:12px;
+	line-height:1.5;
+	color:#000;
+}
+
+
+/*-----見出し-----*/
+h1, h2, h3, h4, h5, h6{ font-size:100%;}
+
+/*-----段落-----*/
+p{ margin-bottom:0;}
+
+/*-----リスト-----*/
+ul{}
+ol{}
+dl{}
+
+/*-----表組み-----*/
+table{
+	border-collapse:separate;
+	border-spacing:0;
+}
+
+/*-----罫線-----*/
+hr{
+	_display:none;	/*forIE6*/
+	position:absolute;
+	left:-9999em;
+	width:10px;
+	height:0;
+}
+
+/*-----リンク-----*/
+a{
+	color:#039;
+	text-decoration:none;
+}
+a:hover{
+	color:#333;
+	text-decoration:underline;
+}
+
+/*-----強調-----*/
+strong{ font-weight:bold;}
+em{ font-style:normal;}
+
+/*-----画像設定-----*/
+img{
+	border:none;
+	vertical-align:bottom;
+	font-family:sans-serif;
+	line-height:1;
+}

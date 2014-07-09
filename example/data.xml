@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datas>
+	<data src="images/1.png" url="http://example.com/" window="_blank" alt="" />
+	<data src="images/2.png" url="http://google.com/" window="_self" alt="" />
+	<data src="images/3.png" url="http://apple.com/" window="_self" alt="" />
+	<data src="images/4.png" url="http://example.com/" window="_self" alt="" />
+	<data src="images/5.png" url="http://example.com/" window="_self" alt="" />
+</datas>
+

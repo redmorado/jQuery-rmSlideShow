@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>example</title>
+	<link rel="stylesheet" href="basic.css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.rmslideshow.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.rmSlideShow').rmslideshow({
+				width: 930,
+				height: 300,
+				animation_duration: 400,
+				animation_delay: 3000,
+				navigator: {
+					prev: '.rmSlideShow-navigator-prev a',
+					next: '.rmSlideShow-navigator-next a'
+				},
+				indicator: '.rmSlideShow-indicator li a',
+				indicatorInterface: '.rmSlideShow-indicator li',
+				progressCallback: function(index, current, max){
+					$('.rmSlideShow-indicator li:eq('+index+') a > span').css('left', -(1 - current / max) * 100 + '%');
+				},
+				changedCallback: function(toIndex, prevIndex){
+					$('.rmSlideShow-indicator li:eq('+prevIndex+') a > span').animate({
+						left: '100%'
+					}, 300, function(){
+						$(this).css({left: '-200%'});
+					});
+					$('.rmSlideShow-indicator li:eq('+toIndex+') a > span').animate({
+						left: '-100%'
+					}, 300);
+				},
+				animatedCallback: function(index){
+				}
+			});
+		});
+	</script>
+	<style type="text/css">
+		.rmSlideShow{
+			overflow: hidden;
+			position: relative;
+			width: 930px;
+			height: 300px;
+		}
+		.rmSlideShow-indicator li{
+			float: left;
+		}
+		.rmSlideShow-indicator a,
+		.rmSlideShow-indicator a span{
+			display: block;
+			width: 100px;
+			height: 8px;
+			text-indent: -99999px;
+		}
+		.rmSlideShow-indicator a{
+			position: relative;
+			overflow: hidden;
+			background-color: #e0e0e0;
+			margin-left: 1px;
+		}
+		.rmSlideShow-indicator .current a{
+			/*background-color: #99ddff;*/
+		}
+		.rmSlideShow-indicator a span{
+			position: absolute;
+			background-color: #99ddff;
+			width: 200%;
+			left: -200%;
+		}
+		.rmSlideShow-indicator a span span{
+			background-color: #77bbff;
+			width: 50%;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+
+<ul class="rmSlideShow">
+	<li><a href="#"><img src="images/1.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/2.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/3.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/4.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/5.png" alt=""/></a></li>
+</ul>
+<div class="rmSlideShow-navigator-prev"><a href="#">prev</a></div>
+<div class="rmSlideShow-navigator-next"><a href="#">next</a></div>
+<ul class="rmSlideShow-indicator">
+	<li><a href="#"><span><span>indicator 1</span></span></a></li>
+	<li><a href="#"><span><span>indicator 2</span></span></a></li>
+	<li><a href="#"><span><span>indicator 3</span></span></a></li>
+	<li><a href="#"><span><span>indicator 4</span></span></a></li>
+	<li><a href="#"><span><span>indicator 5</span></span></a></li>
+</ul>
+
+</body>
+</html>

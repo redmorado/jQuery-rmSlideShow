@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>example</title>
+	<link rel="stylesheet" href="basic.css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.rmslideshow.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.rmSlideShow').rmslideshow({
+				width: 930,
+				height: 300,
+//				animation_type: 'over-slide',
+				animation_duration: 400,
+				animation_delay: 3000,
+				navigator: {
+					prev: '.rmSlideShow-navigator-prev a',
+					next: '.rmSlideShow-navigator-next a'
+				},
+				indicator: '.rmSlideShow-indicator li a',
+				indicatorInterface: '.rmSlideShow-indicator li'
+			});
+
+			//reset
+			$('.resetBtn a').bind('click', function(event){
+				$('.rmSlideShow').data('plugin_rmslideshow').reset();
+				event.preventDefault();
+			});
+		});
+	</script>
+	<style type="text/css">
+		.rmSlideShow{
+			overflow: hidden;
+			position: relative;
+			width: 930px;
+			height: 300px;
+		}
+		.rmSlideShow-indicator{
+			overflow: hidden;
+		}
+		.rmSlideShow-indicator li{
+			float: left;
+			margin: 3px;
+		}
+		.rmSlideShow-indicator .current a{
+			background-color: #c0c0c0;
+		}
+		.rmSlideShow-indicator a{
+			display: block;
+			width: 12px;
+			height: 12px;
+			text-indent: -99999px;
+			border-radius: 6px;
+		}
+		.rmSlideShow-indicator a{
+			position: relative;
+			overflow: hidden;
+			background-color: #f0f0f0;
+			margin-left: 1px;
+		}
+		.rmSlideShow-indicator .current a{
+			/*background-color: #99ddff;*/
+		}
+		.rmSlideShow-indicator a span{
+			position: absolute;
+			background-color: #99ddff;
+			width: 200%;
+			left: -200%;
+		}
+		.rmSlideShow-indicator a span span{
+			background-color: #77bbff;
+			width: 50%;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+
+<ul class="rmSlideShow">
+	<li><a href="#"><img src="images/1.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/2.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/3.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/4.png" alt=""/></a></li>
+	<li><a href="#"><img src="images/5.png" alt=""/></a></li>
+</ul>
+<div class="rmSlideShow-navigator-prev"><a href="#">prev</a></div>
+<div class="rmSlideShow-navigator-next"><a href="#">next</a></div>
+<ul class="rmSlideShow-indicator">
+	<li><a href="#">indicator 1</a></li>
+	<li><a href="#">indicator 2</a></li>
+	<li><a href="#">indicator 3</a></li>
+	<li><a href="#">indicator 4</a></li>
+	<li><a href="#">indicator 5</a></li>
+</ul>
+
+<div class="resetBtn"><a href="#">reset</a></div>
+
+</body>
+</html>
